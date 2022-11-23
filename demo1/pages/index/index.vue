@@ -1,9 +1,12 @@
 <template>
 	<view class="content">
+		<pubTitle title="首页" :subtitle="'首页副标题'" :list='[4,5,6]'></pubTitle>
+		<myitem></myitem>
+		<navigator url="/pages/demo4/demo4">to demo4</navigator>
 		<navigator url="/pages/list/list">新闻列表原始</navigator>
 		<navigator url="/pages/list/list" open-type="reLaunch">to list</navigator>
 		<navigator url="/pages/about/about" open-type="reLaunch">to about</navigator>
-		
+
 		<image src="../../static/images/16.jpeg" mode="aspectFit"></image>
 		<view class="swiper">
 			<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular>
@@ -28,15 +31,15 @@
 </template>
 
 <script>
-	export default {
-	}
+	export default {}
 </script>
 
 <style lang="less">
-	.swiper{
+	.swiper {
 		width: 100%;
 		text-align: center;
-		image{
+
+		image {
 			width: 100%;
 		}
 	}

@@ -1,8 +1,7 @@
 <template>
 	<view>
-		<text>
-			<video src="/static/images/1.mp4" :autoplay="true" muted></video>
-		</text>
+		<pubTitle title="list" subtitle="list副标题"></pubTitle>
+		<video src="/static/images/1.mp4"></video>
 	</view>
 </template>
 
@@ -10,7 +9,7 @@
 	export default {
 		data() {
 			return {
-				
+
 			};
 		}
 	}

@@ -1,5 +1,7 @@
 <template>
 	<view>
+		<myitem></myitem>
+		<navigator url="/pages/index/index" open-type="reLaunch">to index</navigator>
 		<form class="form" @submit="onSubmit">
 			<view class="row">
 				<input name="username" placeholder="姓名">
@@ -34,6 +36,14 @@
 			</view>
 		</form>
 		{{obj}}
+
+		<input v-model="title">
+		<view class="">
+			原标题：{{title}}
+		</view>
+		<view class="">
+			修改后：{{demo}}
+		</view>
 	</view>
 </template>
 
@@ -43,7 +53,8 @@
 			return {
 				obj: null,
 				options: ["高中", "大专", "本科", "研究生", "博士"],
-				selectValue: 0
+				selectValue: 0,
+				title: ""
 			};
 		},
 		methods: {
@@ -53,6 +64,11 @@
 			},
 			onChange(e) {
 				this.selectValue = e.detail.value
+			}
+		},
+		computed: {
+			demo() {
+				return this.title.toLocaleUpperCase()
 			}
 		}
 	}
