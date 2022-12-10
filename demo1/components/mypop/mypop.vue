@@ -32,7 +32,9 @@
 		},
 		methods: {
 			close() {
-				this.$emit('close')
+				this.$emit('update:show', false)
+				// this.show = false
+
 			}
 		}
 	}
