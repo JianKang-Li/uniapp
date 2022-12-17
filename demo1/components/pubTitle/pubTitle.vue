@@ -1,8 +1,8 @@
 <template>
 	<view class="pubTitle">
-		<view class="time">
+		<!-- <view class="time">
 			{{new Date(time)}}
-		</view>
+		</view> -->
 		<view class="big">
 			{{title}}
 		</view>

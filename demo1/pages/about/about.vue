@@ -32,12 +32,12 @@
 			// 	this.isShow = e
 			// }
 		},
-		created() {
-			console.log('about页面created')
-		},
-		mounted() {
-			console.log('about页面mounted')
-		}
+		// created() {
+		// 	console.log('about页面created')
+		// },
+		// mounted() {
+		// 	console.log('about页面mounted')
+		// }
 	}
 </script>
 

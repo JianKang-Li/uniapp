@@ -2,6 +2,7 @@
 	<view>
 		<myitem></myitem>
 		<navigator url="/pages/index/index" open-type="reLaunch">to index</navigator>
+		<button type="primary" size="mini" @click="goBack">返回上一页</button>
 		<form class="form" @submit="onSubmit">
 			<view class="row">
 				<input name="username" placeholder="姓名">
@@ -64,12 +65,25 @@
 			},
 			onChange(e) {
 				this.selectValue = e.detail.value
+			},
+			goBack() {
+				uni.navigateBack()
 			}
 		},
 		computed: {
 			demo() {
 				return this.title.toLocaleUpperCase()
 			}
+		},
+		// mounted() {
+		// 	// 小程序无法使用
+		// 	console.log(this.$route)
+		// }
+		onLoad(e) {
+			// uni集成，可直接使用获取query参数
+			console.log(e)
+			// 可以获取详细信息，小程序也可以使用
+			// console.log(getCurrentPages())
 		}
 	}
 </script>

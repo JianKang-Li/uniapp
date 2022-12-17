@@ -2,7 +2,13 @@
 	<view class="content">
 		<pubTitle title="首页" :subtitle="'首页副标题'" :list='[4,5,6]'></pubTitle>
 		<myitem></myitem>
-		<navigator url="/pages/demo4/demo4">to demo4</navigator>
+		<navigator url="/pages/demo4/demo4?wd=uni-app&author=ljk">to demo4</navigator>
+		<view style="width: 200rpx;height: 100rpx;background-color: pink;" @click="goDemo4">
+			<text>api打开非导航页面</text>
+		</view>
+		<view style="width: 200rpx;height: 100rpx;background-color: blue;" @click="goAbout">
+			<text>api打开导航页面</text>
+		</view>
 		<navigator url="/pages/list/list">新闻列表原始</navigator>
 		<navigator url="/pages/list/list" open-type="reLaunch">to list</navigator>
 		<navigator url="/pages/about/about" open-type="reLaunch">to about</navigator>
@@ -31,7 +37,26 @@
 </template>
 
 <script>
-	export default {}
+	export default {
+		methods: {
+			goDemo4() {
+				uni.navigateTo({
+					url: '/pages/demo4/demo4?wd=uniapp',
+					// success: res => {
+					// 	console.log(res)
+					// }
+				})
+			},
+			goAbout() {
+				uni.reLaunch({
+					url: '/pages/about/about?num=3',
+					// success(res) {
+					// 	console.log(res)
+					// }
+				})
+			}
+		}
+	}
 </script>
 
 <style lang="less">
