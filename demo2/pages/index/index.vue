@@ -4,11 +4,17 @@
 		<button type="warn" @click="showError">showError</button>
 		<view class=""><navigator url="/pages/demo/demo">跳转到demo页面</navigator></view>
 		<view class=""><button @click="showModal">showModal</button></view>
+		<view class=""><button @click="showActive">showActive</button></view>
 	</view>
 </template>
 
 <script>
 export default {
+	data() {
+		return {
+			arr: ['三国演义', '水浒传', '红楼梦', '西游记']
+		};
+	},
 	methods: {
 		showSuccess() {
 			uni.showToast({
@@ -30,13 +36,35 @@ export default {
 		},
 		showModal() {
 			uni.showModal({
-				title: '确认框',
-				content: '是否确认删除',
-				success() {
-					console.log('确定');
+				title: '手机严重',
+				// content: '是否确认删除',
+				editable: true,
+				placeholderText: '请输入手机号',
+				success(res) {
+					if (res.confirm) {
+						console.log('确定', res);
+					} else if (res.cancel) {
+						uni.showToast({
+							title: '取消',
+							icon: 'none'
+						});
+					}
 				},
-				fail() {
-					console.log('取消');
+				fail(error) {
+					console.log('error', error);
+				}
+			});
+		},
+		showActive() {
+			uni.showActionSheet({
+				// title: '名著选择',
+				itemList: this.arr,
+				// 存在this指向问题
+				success: res => {
+					console.log('选中了' + this.arr[res.tapIndex], res);
+				},
+				fail: res => {
+					console.log(res.errMsg);
 				}
 			});
 		}
@@ -55,6 +83,9 @@ export default {
 </script>
 
 <style lang="less">
-.content {
+.box {
+	width: 200rpx;
+	height: 200rpx;
+	background-color: antiquewhite;
 }
 </style>
