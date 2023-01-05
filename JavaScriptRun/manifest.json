@@ -5,7 +5,7 @@
     "name" : "JavaScriptRun",
     /*应用名称，程序桌面图标名称*/
     "version" : {
-        "name" : "1.0",
+        "name" : "1.1",
         /*应用版本名称*/
         "code" : 1
     },
@@ -130,19 +130,10 @@
                 "aliasname" : "",
                 /*Android应用打包使用密钥库中证书的别名*/
                 "permissions" : [
-                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
-                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
-                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>"
                 ],
-                "autoSdkPermissions" : true
+                "autoSdkPermissions" : false
             },
             /*使用Native.js调用原生安卓API需要使用到的系统权限*/
             "orientation" : [ "portrait-primary" ],
@@ -283,5 +274,5 @@
             }
         }
     },
-    "screenOrientation" : [ "portrait-primary" ]
+    "screenOrientation" : [ "portrait-primary", "landscape-primary", "landscape-secondary" ]
 }

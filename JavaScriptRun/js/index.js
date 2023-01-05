@@ -78,8 +78,9 @@ function tab(obj) {
 
 function copy() {
 	let code = codes.value;
-	if (navigator.clipboard) {
+	/* if (navigator.clipboard) {
 		let theClipboard = navigator.clipboard;
+		console.log(theClipboard)
 		if (!code.trim()) {
 			$Tip.info("无代码可复制!");
 			return;
@@ -102,7 +103,16 @@ function copy() {
 		document.execCommand("Copy"); //执行复制命令
 		$Tip.success('复制成功！')
 		copyInput.remove(); //删除动态创建的节点
-	}
+	} */
+	
+	let copyInput = document.createElement('input'); //创建input元素
+	document.body.appendChild(copyInput); //向页面底部追加输入框
+	copyInput.setAttribute('value', code); //添加属性，将url赋值给input元素的value属性
+	copyInput.select(); //选择input元素
+	document.execCommand("Copy"); //执行复制命令
+	$Tip.success('复制成功！')
+	copyInput.remove(); //删除动态创建的节点
+
 }
 
 copybtn.addEventListener("click", () => {
