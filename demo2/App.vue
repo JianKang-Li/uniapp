@@ -1,8 +1,12 @@
 <script>
 	export default {
-		// onLaunch: function() {
-		// 	console.log('App Launch')
-		// },
+		onLaunch: function() {
+			uni.setTabBarStyle({
+				// color:'#c00',
+				// backgroundColor:'#ccc',
+				backgroundImage:'linear-gradient(to top, #a80077, #66ff00);'
+			})
+		},
 		// onShow: function() {
 		// 	console.log('App Show')
 		// },

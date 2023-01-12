@@ -78,6 +78,11 @@ export default {
 		// 	// 关闭Loading框
 		// 	uni.hideLoading();
 		// }, 2000);
+	},
+	onTabItemTap() {
+		uni.hideTabBarRedDot({
+			index: 0
+		});
 	}
 };
 </script>

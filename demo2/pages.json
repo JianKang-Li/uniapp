@@ -26,6 +26,13 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "详情页",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"globalStyle": {
@@ -36,18 +43,31 @@
 	},
 	"uniIdRouter": {},
 	"tabBar": {
+		"iconfontSrc": "./static/font/iconfont.ttf",
 		"list": [{
 				"text": "首页",
-				"pagePath": "pages/index/index"
+				"pagePath": "pages/index/index",
+				"iconfont": {
+					"text": "\ue8b9",
+					"selectedText": "\ue8c6"
+				}
 			},
 			{
 				"text": "列表",
-				"pagePath": "pages/list/list"
-
+				"pagePath": "pages/list/list",
+				"iconfont": {
+					"text": "\ue8af",
+					"selectedText": "\ue8c4",
+					"fontSize": "30px"
+				}
 			},
 			{
 				"text": "用户",
-				"pagePath": "pages/user/user"
+				"pagePath": "pages/user/user",
+				"iconfont": {
+					"text": "\ue8b4",
+					"selectedText": "\ue8c5"
+				}
 			}
 		]
 	}
