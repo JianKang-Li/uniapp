@@ -104,7 +104,7 @@ function copy() {
 		$Tip.success('复制成功！')
 		copyInput.remove(); //删除动态创建的节点
 	} */
-	
+
 	let copyInput = document.createElement('input'); //创建input元素
 	document.body.appendChild(copyInput); //向页面底部追加输入框
 	copyInput.setAttribute('value', code); //添加属性，将url赋值给input元素的value属性
@@ -115,7 +115,7 @@ function copy() {
 
 }
 
-copybtn.addEventListener("click", () => {
+copybtn.addEventListener("click", (e) => {
 	copy();
 });
 
@@ -168,3 +168,8 @@ class Tip {
 }
 
 window.$Tip = new Tip()
+
+
+function OpenUrl(url) {
+	plus.runtime.openWeb(url);
+}

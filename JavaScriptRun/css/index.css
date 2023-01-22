@@ -21,6 +21,22 @@ header {
 	color: #fff;
 }
 
+/* .links {
+	width: 80%;
+	margin-bottom: 2%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+
+.link {
+	border: 1px solid #ccc;
+	color: #fff;
+	border-radius: 5px;
+	padding: 0.3rem 0.5rem;
+} */
+
 .controls {
 	width: 80%;
 	margin-bottom: 2%;

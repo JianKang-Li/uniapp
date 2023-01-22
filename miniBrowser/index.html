@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>minBrowser</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
+
+			body {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+			}
+
+			.searchBar {
+				width: 80%;
+				display: flex;
+				justify-content: center;
+			}
+
+			.text {
+				width: 70%;
+				height: 2rem;
+				border: 1px solid #ccc;
+				border-radius: 5px 0 0 5px;
+				font-size: 1rem;
+			}
+
+			.text:focus {
+				outline: none;
+			}
+
+			.btn {
+				width: fit-content;
+				padding: 0.3rem 0.5rem;
+				border: 1px solid #ccc;
+				border-radius: 0 5px 5px 0;
+				height: 2.2rem;
+				font-size: 1.2rem;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="searchBar">
+			<input type="text" class="text" autofocus>
+			<button class="btn" onclick='openUrl()'>搜索</button>
+		</div>
+
+		<script>
+			let input = document.querySelector('.text')
+
+			function openUrl() {
+				let text = input.value
+				let ipRe =
+					/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5]):*/
+				if (/http(s)?:\/\/*/.test(text) || ipRe.test(text)) {
+					plus.runtime.openWeb(text);
+				} else {
+					plus.runtime.openWeb('http://www.baidu.com/s?wd=' + text)
+				}
+			}
+		</script>
+	</body>
+</html>
