@@ -8,13 +8,13 @@
 			html,
 			body {
 				height: 100%;
+				overflow: hidden;
 			}
 
 			body {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				overflow: hidden;
 			}
 
 			.searchBar {
@@ -28,6 +28,7 @@
 				height: 2rem;
 				border: 1px solid #ccc;
 				border-radius: 5px 0 0 5px;
+				padding: 0.3rem 0.5rem;
 				font-size: 1rem;
 			}
 
@@ -37,33 +38,34 @@
 
 			.btn {
 				width: fit-content;
-				padding: 0.3rem 0.5rem;
+				text-align: center;
 				border: 1px solid #ccc;
 				border-radius: 0 5px 5px 0;
-				height: 2.2rem;
 				font-size: 1.2rem;
 				cursor: pointer;
+				padding: 0 1rem;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="searchBar">
+		<form action="" onsubmit="openUrl()" class="searchBar">
 			<input type="text" class="text" autofocus>
-			<button class="btn" onclick='openUrl()'>搜索</button>
-		</div>
-
+			<button class="btn" type='submit'>搜索</button>
+		</form>
 		<script>
 			let input = document.querySelector('.text')
 
-			function openUrl() {
+			function openUrl(e) {
 				let text = input.value
-				let ipRe =
+				let
+					ipRe =
 					/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5]):*/
 				if (/http(s)?:\/\/*/.test(text) || ipRe.test(text)) {
 					plus.runtime.openWeb(text);
 				} else {
 					plus.runtime.openWeb('http://www.baidu.com/s?wd=' + text)
 				}
+				return false
 			}
 		</script>
 	</body>
