@@ -86,7 +86,8 @@
         },
         "NativeObj" : {
             "description" : "原生对象"
-        }
+        },
+        "Camera" : {}
     },
     "plus" : {
         "splashscreen" : {
@@ -125,7 +126,10 @@
                 /*Android应用打包使用密钥库中证书的密码*/
                 "aliasname" : "",
                 /*Android应用打包使用密钥库中证书的别名*/
-                "permissions" : []
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>"
+                ],
+                "autoSdkPermissions" : true
             },
             /*使用Native.js调用原生安卓API需要使用到的系统权限*/
             "orientation" : [ "portrait-primary" ],
@@ -256,7 +260,8 @@
                     "xhdpi" : "",
                     /*720P高分屏启动图片，分辨率：720x1242*/
                     "xxhdpi" : "" /*1080P高分屏启动图片，分辨率：1080x1882*/
-                }
+                },
+                "useOriginalMsgbox" : true
             },
             "ios" : {
                 "dSYMs" : false
